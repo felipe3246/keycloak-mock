@@ -70,7 +70,7 @@ class MockInstance {
       authServerURL: this.params.authServerURL,
       audience: options.audience,
       roles: options.roles,
-      realmRoles: options.realmRoles
+      realmRoles: options.realmRoles,
     });
   }
 }

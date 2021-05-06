@@ -1,10 +1,13 @@
 {
-  "name": "keycloak-mock",
-  "version": "1.0.10",
-  "description": "Keycloak server mock for Node.js",
+  "name": "@felipe3246/keycloak-mock",
+  "version": "1.0.0",
+  "description": "Keycloak server mock for Node.js with Roles and Realm Roles",
   "main": "dist/index.js",
-  "repository": "https://github.com/SectorLabs/keycloak-mock",
-  "author": "Sector Labs <open-source@sectorlabs.ro>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipe3246/keycloak-mock.git"
+  },
+  "author": "felipe3246",
   "license": "MIT",
   "engines": {
     "node": ">=8.0.0"
@@ -36,5 +39,17 @@
     "nock": "^11.9.1",
     "node-jose": "^1.1.3",
     "uuid": "^7.0.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/felipe3246/keycloak-mock/issues"
+  },
+  "homepage": "https://github.com/felipe3246/keycloak-mock#readme",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "keywords": [
+    "keycloak",
+    "keycloak-mock"
+  ]
 }

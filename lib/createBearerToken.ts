@@ -35,8 +35,8 @@ const createBearerToken = (options: CreateTokenOptions): string => {
         resource_access: { [options.clientID]: { roles: options.roles } },
       }),
       ...(options.roles && {
-        reaml_access: { roles: options.realmRoles },
-      })
+        realmRoles: { roles: options.realmRoles },
+      }),
     },
     options.key.toPEM(true),
     {

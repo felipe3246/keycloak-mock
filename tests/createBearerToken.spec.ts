@@ -35,7 +35,7 @@ describe("createBearerToken", () => {
       authServerURL: "https://example.com",
       audience: "test",
       roles: ["admin"],
-      realmRoles: ["test", "test1"]
+      realmRoles: ["test", "test1"],
     };
 
     const token = createBearerToken(createTokenOptions);
