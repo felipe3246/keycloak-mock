@@ -15,6 +15,7 @@ export interface CreateTokenOptions {
   audience?: string | string[];
   roles?: string[];
   realmRoles?: string[];
+  preferred_username?: string;
 }
 
 const createBearerToken = (options: CreateTokenOptions): string => {
@@ -37,6 +38,7 @@ const createBearerToken = (options: CreateTokenOptions): string => {
       ...(options.roles && {
         realmRoles: { roles: options.realmRoles },
       }),
+      preferred_username: options.user.profile.username
     },
     options.key.toPEM(true),
     {

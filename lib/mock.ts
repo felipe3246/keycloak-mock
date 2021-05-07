@@ -112,7 +112,7 @@ const activateMock = (instance: MockInstance, options?: MockOptions): Mock => {
       if (options && options.createTokenView) {
         return options.createTokenView(instance, this.req, decodedBody);
       }
-
+      
       return createToken(instance, this.req, decodedBody);
     })
     .post(`/admin/realms/${realm}/users`)

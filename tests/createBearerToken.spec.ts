@@ -40,7 +40,6 @@ describe("createBearerToken", () => {
 
     const token = createBearerToken(createTokenOptions);
     const decodedToken = jwt.decode(token, { complete: true }) as any;
-
     expect(decodedToken.header.alg).toBe("RS256");
     expect(decodedToken.header.typ).toBe("JWT");
     expect(decodedToken.payload.typ).toBe("Bearer");
@@ -49,7 +48,7 @@ describe("createBearerToken", () => {
     expect(decodedToken.payload.resource_access).toStrictEqual({
       client: { roles: ["admin"] },
     });
-    expect(decodedToken.payload.reaml_access).toStrictEqual({
+    expect(decodedToken.payload.realmRoles).toStrictEqual({
       roles: ["test", "test1"],
     });
     expect(decodedToken.payload.iss).toBe(

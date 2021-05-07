@@ -1,6 +1,6 @@
 {
   "name": "@felipe3246/keycloak-mock",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Keycloak server mock for Node.js with Roles and Realm Roles",
   "main": "dist/index.js",
   "repository": {

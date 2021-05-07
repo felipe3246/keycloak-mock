@@ -1,7 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
 import { PostViewFn } from "../types";
-import createBearerToken from "../createBearerToken";
 import { MockUser, MockUserCredentialType } from "../database";
 
 const createToken: PostViewFn = (instance, request, body) => {
@@ -46,8 +45,8 @@ const createToken: PostViewFn = (instance, request, body) => {
   }
 
   const expiresIn = 3600;
-  const accessToken = instance.createBearerToken(user.profile.id, expiresIn);
-  const refreshToken = instance.createBearerToken(user.profile.id, expiresIn);
+  const accessToken = instance.createBearerToken(user.profile.id, expiresIn, instance.bearerOptions);
+  const refreshToken = instance.createBearerToken(user.profile.id, expiresIn, instance.bearerOptions);
 
   return [
     200,

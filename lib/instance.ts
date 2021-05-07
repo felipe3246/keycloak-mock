@@ -34,17 +34,20 @@ class MockInstance {
   defaultKey: JWK.Key;
   database: MockDatabase;
   params: MockInstanceParams;
+  bearerOptions: BearerTokenOptions;
 
   constructor(
     store: JWK.KeyStore,
     defaultKey: JWK.Key,
     database: MockDatabase,
-    params: MockInstanceParams
+    params: MockInstanceParams,
+    bearerOptions: BearerTokenOptions
   ) {
     this.store = store;
     this.defaultKey = defaultKey;
     this.database = database;
     this.params = params;
+    this.bearerOptions = bearerOptions
   }
 
   createURL(path: string): string {
@@ -71,12 +74,14 @@ class MockInstance {
       audience: options.audience,
       roles: options.roles,
       realmRoles: options.realmRoles,
+      preferred_username: user.profile.firstName
     });
   }
 }
 
 const createMockInstance = async (
-  options: CreateMockInstanceOptions
+  options: CreateMockInstanceOptions,
+  tokenOptions: BearerTokenOptions
 ): Promise<MockInstance> => {
   const store = JWK.createKeyStore();
 
@@ -94,8 +99,8 @@ const createMockInstance = async (
     authServerURL: options.authServerURL,
     clientID: options.clientID,
     clientSecret: options.clientSecret || null,
-    realm: options.realm,
-  });
+    realm: options.realm
+  }, tokenOptions);
 };
 
 export { MockInstance, createMockInstance };

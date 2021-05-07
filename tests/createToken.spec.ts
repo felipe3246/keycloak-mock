@@ -49,7 +49,7 @@ describe("createToken", () => {
 
   it("returns 400 with invalid client_id", async () => {
     const { kmock, url } = createInstanceAndURL();
-
+    
     const { status } = await axios.post(
       url,
       {
@@ -60,7 +60,7 @@ describe("createToken", () => {
       },
       { validateStatus: () => true }
     );
-
+    
     expect(status).toBe(400);
   });
 
