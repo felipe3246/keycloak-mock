@@ -38,7 +38,7 @@
     "lodash": "^4.17.15",
     "nock": "^11.9.1",
     "node-jose": "^1.1.3",
-    "uuid": "^7.0.2"
+    "uuid": "^8.0.0"
   },
   "bugs": {
     "url": "https://github.com/felipe3246/keycloak-mock/issues"
